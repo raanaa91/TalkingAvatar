@@ -10,12 +10,12 @@
     // تبدیل صدا به Base64 برای ارسال به فرانت
     const audioBase64 = audioBuffer.toString('base64');
 
-    return ({
+    return {
       audio: `data:audio/mpeg;base64,${audioBase64}`,
       lipSync,
-      duration: estimatedDuration // ارسال مدت زمان به فرانت‌اند
-    });
-
+      duration: estimatedDuration,
+    };
+  }
 
 function generateLipSync(durationInSeconds) {
   const lipSync = [];
@@ -48,6 +48,6 @@ function generateLipSync(durationInSeconds) {
 
     return lipSync;
 }
-    }
+
 
 module.exports = { lipSyncMock };
